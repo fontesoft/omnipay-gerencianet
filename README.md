@@ -3,6 +3,7 @@
 **Gerencianet Pagamentos' driver for the Omnipay PHP payment processing library**
 
 [![Build Status](https://travis-ci.org/fontesoft/omnipay-gerencianet.svg?branch=master)](https://travis-ci.org/fontesoft/omnipay-gerencianet)
+[![Codecov](https://codecov.io/gh/fontesoft/omnipay-gerencianet/branch/master/graph/badge.svg)](https://codecov.io/gh/fontesoft/omnipay-gerencianet)
 [![Latest Stable Version](https://poser.pugx.org/fontesoft/omnipay-gerencianet/v/stable)](https://packagist.org/packages/fontesoft/omnipay-gerencianet)
 [![License](https://poser.pugx.org/fontesoft/omnipay-gerencianet/license)](https://packagist.org/packages/fontesoft/omnipay-gerencianet)
 
