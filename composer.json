@@ -1,0 +1,29 @@
+{
+    "name": "fontesoft/omnipay-gerencianet",
+    "description": "Gerencianet Pagamentos' driver for the Omnipay PHP payment processing library",
+    "type": "library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "gerencianet",
+        "purchase"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samuel Fontebasso",
+            "email": "sfdsilva@fontesoft.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Omnipay\\Gerencianet\\" : "src/" }
+    },
+    "require": {
+        "omnipay/omnipay": "~2.3.2"
+    },
+    "require-dev": {
+    }
+}
