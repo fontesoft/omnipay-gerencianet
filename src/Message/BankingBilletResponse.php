@@ -1,6 +1,6 @@
 <?php
 /**
- * Gerencianet Response
+ * Gerencianet Banking Billet Response
  */
 
 namespace Omnipay\Gerencianet\Message;
@@ -9,9 +9,9 @@ use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
 
 /**
- * Gerencianet Response
+ * Gerencianet Banking Billet Response
  */
-class Response extends AbstractResponse
+class BankingBilletResponse extends AbstractResponse
 {
     protected $statusCode;
 
@@ -51,5 +51,22 @@ class Response extends AbstractResponse
     public function getCode()
     {
         return $this->statusCode;
+    }
+    
+    public function getBarcode()
+    {
+        if (isset($this->data['data']['barcode'])) {
+            return $this->data['data']['barcode'];
+        }
+        
+        return null;
+    }
+    
+    public function getLink()
+    {
+        if (isset($this->data['data']['link'])) {
+            return $this->data['data']['link'];
+        }
+        return null;
     }
 }

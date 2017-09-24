@@ -139,7 +139,7 @@ class BankingBillet
     
     public function setDiscountType($value)
     {
-        return $this->setParameter('discount_value', $value);
+        return $this->setParameter('discount_type', $value);
     }
     
     public function getDiscountValue()
@@ -170,5 +170,15 @@ class BankingBillet
     public function setConfigurationInterest($value)
     {
         return $this->setParameter('configuration_interest', $value);
+    }
+    
+    public function getMessage()
+    {
+        return $this->getParameter('message');
+    }
+    
+    public function setMessage($value)
+    {
+        return $this->setParameter('message', $value);
     }
 }

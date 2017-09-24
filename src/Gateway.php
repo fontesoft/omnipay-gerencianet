@@ -127,7 +127,7 @@ class Gateway extends AbstractGateway
      *
      * @param string $class
      * @param array $parameters
-     * @return \Omnipay\PayPal\Message\AbstractRestRequest
+     * @return \Omnipay\Gerencianet\Message\AbstractRequest
      */
     public function createRequest($class, array $parameters = array())
     {

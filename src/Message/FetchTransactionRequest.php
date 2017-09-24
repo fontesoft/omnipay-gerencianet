@@ -1,6 +1,6 @@
 <?php
 /**
- * Gerencianet REST Fetch Transaction Request
+ * Gerencianet Fetch Transaction Request
  */
 
 namespace Omnipay\Gerencianet\Message;
@@ -17,7 +17,6 @@ class FetchTransactionRequest extends AbstractRequest
      * Get HTTP Method.
      *
      * The HTTP method for fetchTransaction requests must be GET.
-     * Using POST results in an error 500 from PayPal.
      *
      * @return string
      */

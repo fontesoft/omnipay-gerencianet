@@ -1,12 +1,12 @@
 <?php
 /**
- * Gerencianet REST Token Request
+ * Gerencianet Token Request
  */
 
 namespace Omnipay\Gerencianet\Message;
 
 /**
- * Gerencianet REST Token Request
+ * Gerencianet Token Request
  *
  * With each API call, you’ll need to set request headers, including
  * an OAuth 2.0 access token. Get an access token by using the OAuth
