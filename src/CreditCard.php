@@ -14,10 +14,6 @@ class CreditCard
      */
     protected $parameters;
     
-    private $billingAddress;
-    
-    private $customer;
-    
     /**
      * Create a new Customer object using the specified parameters
      *
