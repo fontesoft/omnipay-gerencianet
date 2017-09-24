@@ -40,20 +40,6 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         return $this->setParameter('token', $value);
     }
-    
-    /**
-     * Set the items in this order
-     *
-     * @param ItemBag|array $items An array of items in this order
-     */
-    public function setItems($items)
-    {
-        if ($items && !$items instanceof \Omnipay\Common\ItemBag) {
-            $items = new \Omnipay\Common\ItemBag($items);
-        }
-
-        return $this->setParameter('items', $items);
-    }
 
     /**
      * Get HTTP Method.

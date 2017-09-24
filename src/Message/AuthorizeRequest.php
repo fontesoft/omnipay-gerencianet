@@ -4,6 +4,7 @@ namespace Omnipay\Gerencianet\Message;
 
 class AuthorizeRequest extends AbstractRequest
 {
+    
     /**
      * {@inheritdoc}
      */
@@ -13,7 +14,7 @@ class AuthorizeRequest extends AbstractRequest
         $items = $this->getItems();
         if ($items) {
             $itemList = array();
-            foreach ($items as $n => $item) {
+            foreach ($items as $item) {
                 $itemList[] = array(
                     'name' => $item->getName(),
                     'amount' => $item->getQuantity(),

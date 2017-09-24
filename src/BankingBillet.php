@@ -22,8 +22,6 @@ class BankingBillet
     const DISCOUNT_TYPE_CURRENCY = 'currency';
     const DISCOUNT_TYPE_PERCENTAGE = 'percentage';
     
-    private $customer;
-    
     /**
      * Internal storage of all of the banking billet parameters.
      *
@@ -36,13 +34,8 @@ class BankingBillet
      *
      * @param array|null $parameters An array of parameters to set on the new object
      */
-    public function __construct($parameters = null, $customer = null)
+    public function __construct($parameters = null)
     {
-        if($customer instanceof Customer) {
-            $this->customer = $customer;
-        } else {
-            $this->customer = new Customer($customer);
-        }
         $this->initialize($parameters);
     }
     
@@ -84,12 +77,7 @@ class BankingBillet
      */
     public function getParameters()
     {
-        $parameters = $this->parameters->all();
-        if($this->customer->getParameters()) {
-            $parameters['customer'] = $this->customer->getParameters();
-        }
-        
-        return $parameters;
+        return $this->parameters->all();
     }
 
     /**
@@ -109,7 +97,7 @@ class BankingBillet
      */
     public function getCustomer()
     {
-        return $this->customer;
+        return $this->getParameter('customer');
     }
 
     /**
@@ -117,9 +105,14 @@ class BankingBillet
      * 
      * @param \Omnipay\Gerencianet\Customer $customer Gerencianet Customer
      */
-    public function setCustomer($customer)
+    public function setCustomer($value)
     {
-        $this->customer = $customer;
+        if(!$value instanceof Customer) {
+            $this->setParameter('customer', new Customer($value));
+        }
+        $this->setParameter('customer', $value);
+        
+        return $this;
     }
     
     public function getExpireAt()

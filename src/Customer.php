@@ -10,9 +10,6 @@ use Omnipay\Common\Helper;
 
 class Customer
 {
-    private $address;
-    
-    private $corporate;
     
     /**
      * Internal storage of all of the customer parameters.
@@ -25,13 +22,9 @@ class Customer
      * Create a new Customer object using the specified parameters 
      *
      * @param array|null $parameters An array of parameters to set on the new object
-     * @param array|null $address An associative array of Address parameters
-     * @param array|null $corporate An associative array of Corporate parameters
      */
-    public function __construct($parameters = null, $address = null, $corporate = null)
+    public function __construct($parameters = null)
     {
-        $this->address = new Address($address);
-        $this->corporate = new Corporate($corporate);
         $this->initialize($parameters);
     }
     
@@ -73,15 +66,7 @@ class Customer
      */
     public function getParameters()
     {
-        $parameters = $this->parameters->all();
-        if($this->address->getParameters()) {
-            $parameters['address'] = $this->address->getParameters();
-        }
-        if($this->corporate->getParameters()) {
-            $parameters['juridical_person'] = $this->corporate->getParameters();
-        }
-        
-        return $parameters;
+        return $this->parameters->all();
     }
 
     /**
@@ -144,26 +129,32 @@ class Customer
         return $this->setParameter('birth', $value);
     }
     
-    public function getCorporate()
+    public function getJuridicalPerson()
     {
-        return $this->corporate;
+        return $this->getParameter('juridical_person');
     }
     
-    public function setCorporate($corporate)
+    public function setJuridicalPerson($value)
     {
-        $this->corporate = $corporate;
+        if(!$value instanceof JuridicalPerson) {
+            $this->setParameter('juridical_person', new JuridicalPerson($value));
+        }
+        $this->setParameter('juridical_person', $value);
         
         return $this;
     }
     
     public function getAddress()
     {
-        return $this->address;
+        return $this->getParameter('address');
     }
     
-    public function setAddress($address)
+    public function setAddress($value)
     {
-        $this->address = $address;
+        if(!$value instanceof Address) {
+            $this->setParameter('address', new Address($value));
+        }
+        $this->setParameter('address', $value);
         
         return $this;
     }

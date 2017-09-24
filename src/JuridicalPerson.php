@@ -5,7 +5,7 @@ namespace Omnipay\Gerencianet;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Omnipay\Common\Helper;
 
-class Corporate
+class JuridicalPerson
 {
     /**
      * Internal storage of all of the card parameters.
