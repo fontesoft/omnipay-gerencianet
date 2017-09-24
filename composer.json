@@ -15,9 +15,14 @@
     "authors": [
         {
             "name": "Samuel Fontebasso",
-            "email": "sfdsilva@fontesoft.com"
+            "email": "sfdsilva@fontesoft.com",
+            "homepage": "https://github.com/fontebasso"
         }
     ],
+    "support": {
+        "email": "devops@fontesoft.com",
+        "issues": "https://github.com/fontesoft/omnipay-gerencianet/issues"
+    },
     "autoload": {
         "psr-4": { "Omnipay\\Gerencianet\\" : "src/" }
     },
