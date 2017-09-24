@@ -1,4 +1,9 @@
-/examples/
-/nbproject/
 /vendor/
+composer.lock
 phpunit.xml
+
+.directory
+dirlist.app
+dirlist.vendor
+dirlist.cache
+/documents/
