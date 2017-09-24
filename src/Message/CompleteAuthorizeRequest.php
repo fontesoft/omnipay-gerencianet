@@ -33,7 +33,6 @@ class CompleteAuthorizeRequest extends AbstractRequest
                 $method => $parameters
             )
         );
-        print_r($data);
         return $data;
     }
 
