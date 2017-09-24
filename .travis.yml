@@ -20,6 +20,7 @@ matrix:
     - php: 5.5
       env: setup=stable
 
+dist: trusty
 sudo: false
 
 before_install:
