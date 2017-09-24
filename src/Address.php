@@ -5,7 +5,7 @@ namespace Omnipay\Gerencianet;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Omnipay\Common\Helper;
 
-class CreditCard
+class Address
 {
     /**
      * Internal storage of all of the card parameters.
@@ -14,36 +14,30 @@ class CreditCard
      */
     protected $parameters;
     
-    private $billingAddress;
-    
-    private $customer;
-    
     /**
      * Create a new Customer object using the specified parameters 
      *
      * @param array|null $parameters An array of parameters to set on the new object
      */
-    public function __construct($parameters = null, $address = null, $customer = null)
+    public function __construct($parameters = null)
     {
-        $this->billingAddress = new Address($address);
-        $this->customer = new Customer($customer);
         $this->initialize($parameters);
     }
     
     /**
-     * Initialize the object with parameters.
+     * Initialize the Address object with parameters.
      *
      * If any unknown parameters passed, they will be ignored.
      *
      * @param array $parameters An associative array of parameters
-     * @return CreditCard provides a fluent interface.
+     * @return Address provides a fluent interface.
      */
     public function initialize($parameters = null)
     {
         $this->parameters = new ParameterBag;
 
         Helper::initialize($this, $parameters);
-        
+
         return $this;
     }
 
@@ -54,9 +48,7 @@ class CreditCard
      */
     public function getParameters()
     {
-        $parameters = $this->parameters->all();
-        $parameters['billing_address'] = $this->billingAddress->getParameters();
-        $parameters['customer'] = $this->customer->getParameters();
+        return $this->parameters->all();
     }
 
     /**
@@ -83,55 +75,74 @@ class CreditCard
         return $this;
     }
     
-    public function getInstallments()
+    public function getStreet()
     {
-        return $this->getParameter('installments');
+        return $this->getParameter('street');
     }
     
-    public function setInstallments($value)
+    public function setStreet($value)
     {
-        return $this->setParameter('installments', $value);
+        return $this->setParameter('street', $value);
     }
     
-    public function getPaymentToken()
+    public function getNumber()
     {
-        return $this->getParameter('payment_token');
+        return $this->getParameter('number');
     }
     
-    public function setPaymentToken($value)
+    public function setNumber($value)
     {
-        return $this->setParameter('payment_token', $value);
+        return $this->setParameter('number', $value);
     }
     
-    public function getBillingAddress()
+    public function getNeighborhood()
     {
-        return $this->billingAddress;
+        return $this->getParameter('neighborhood');
     }
     
-    public function setBillingAddress($address)
+    public function setNeighborhood($value)
     {
-        $this->billingAddress = $address;
-        
-        return $this;
+        return $this->setParameter('neighborhood', $value);
     }
     
-    /**
-     * Get customer associated with the payment of the billet banking
-     * 
-     * @return \Omnipay\Gerencianet\Customer Gerencianet Customer
-     */
-    public function getCustomer()
+    public function getZipcode()
     {
-        return $this->customer;
+        return $this->getParameter('zipcode');
     }
-
-    /**
-     * Set customer of the banking billet
-     * 
-     * @param \Omnipay\Gerencianet\Customer $customer Gerencianet Customer
-     */
-    public function setCustomer($customer)
+    
+    public function setZipcode($value)
     {
-        $this->customer = $customer;
+        return $this->setParameter('zipcode', $value);
+    }
+    
+    public function getCity()
+    {
+        return $this->getParameter('city');
+    }
+    
+    public function setCity($value)
+    {
+        return $this->setParameter('city', $value);
+    }
+    
+    public function getComplement()
+    {
+        return $this->getParameter('complement');
+    }
+    
+    public function setComplement($value)
+    {
+        return $this->setParameter('complement', $value);
+    }
+    
+    public function getState()
+    {
+        return $this->getParameter('state');
+    }
+    
+    public function setState($value)
+    {
+        return $this->setParameter('state', $value);
     }
 }
+

@@ -3,6 +3,7 @@
 namespace Omnipay\Gerencianet;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
+use Omnipay\Common\Helper;
 
 /**
  * Banking Billet class
@@ -17,6 +18,10 @@ use Symfony\Component\HttpFoundation\ParameterBag;
  */
 class BankingBillet
 {
+    
+    const DISCOUNT_TYPE_CURRENCY = 'currency';
+    const DISCOUNT_TYPE_PERCENTAGE = 'percentage';
+    
     private $customer;
     
     /**
@@ -31,8 +36,13 @@ class BankingBillet
      *
      * @param array|null $parameters An array of parameters to set on the new object
      */
-    public function __construct($parameters = null)
+    public function __construct($parameters = null, $customer = null)
     {
+        if($customer instanceof Customer) {
+            $this->customer = $customer;
+        } else {
+            $this->customer = new Customer($customer);
+        }
         $this->initialize($parameters);
     }
     
@@ -74,7 +84,12 @@ class BankingBillet
      */
     public function getParameters()
     {
-        return $this->parameters->all();
+        $parameters = $this->parameters->all();
+        if($this->customer->getParameters()) {
+            $parameters['customer'] = $this->customer->getParameters();
+        }
+        
+        return $parameters;
     }
 
     /**
@@ -87,11 +102,6 @@ class BankingBillet
         return $this->parameters->get($key);
     }
 
-    public function getExpireAt()
-    {
-        return $this->getParameter('expire_at');
-    }
-
     /**
      * Get customer associated with the payment of the billet banking
      * 
@@ -100,11 +110,6 @@ class BankingBillet
     public function getCustomer()
     {
         return $this->customer;
-    }
-
-    public function setExpireAt($value)
-    {
-        return $this->setParameter('expire_at', $value);
     }
 
     /**
@@ -116,5 +121,54 @@ class BankingBillet
     {
         $this->customer = $customer;
     }
+    
+    public function getExpireAt()
+    {
+        return $this->getParameter('expire_at');
+    }
+    
+    public function setExpireAt($value)
+    {
+        return $this->setParameter('expire_at', $value);
+    }
+    
+    public function getDiscountType()
+    {
+        return $this->getParameter('discount_type');
+    }
+    
+    public function setDiscountType($value)
+    {
+        return $this->setParameter('discount_value', $value);
+    }
+    
+    public function getDiscountValue()
+    {
+        return $this->getParameter('discount_value');
+    }
+    
+    public function setDiscountValue($value)
+    {
+        return $this->setParameter('discount_value', $value);
+    }
 
+    public function getConfigurationFine()
+    {
+        return $this->getParameter('configuration_fine');
+    }
+    
+    public function setConfigurationFine($value)
+    {
+        return $this->setParameter('configuration_fine', $value);
+    }
+    
+    public function getConfigurationInterest()
+    {
+        return $this->getParameter('configuration_interest');
+    }
+    
+    public function setConfigurationInterest($value)
+    {
+        return $this->setParameter('configuration_interest', $value);
+    }
 }

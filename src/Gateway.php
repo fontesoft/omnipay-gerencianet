@@ -147,37 +147,7 @@ class Gateway extends AbstractGateway
 
     public function completeAuthorize(array $options = array())
     {
-        return $this->createRequest('\Omnipay\Gerencianet\Message\FetchTransactionRequest', $options);
-    }
-
-    public function capture(array $options = array())
-    {
-        return $this->createRequest('\Omnipay\Gerencianet\Message\CaptureRequest', $options);
-    }
-
-    public function purchase(array $options = array())
-    {
-        return $this->createRequest('\Omnipay\Gerencianet\Message\PurchaseRequest', $options);
-    }
-
-    public function completePurchase(array $options = array())
-    {
-        return $this->createRequest('\Omnipay\Gerencianet\Message\FetchTransactionRequest', $options);
-    }
-
-    public function refund(array $options = array())
-    {
-        return $this->createRequest('\Omnipay\Gerencianet\Message\RefundRequest', $options);
-    }
-
-    public function void(array $options = array())
-    {
-        return $this->createRequest('\Omnipay\Gerencianet\Message\VoidRequest', $options);
-    }
-    
-    public function acceptNotification(array $options = array())
-    {
-        return $this->createRequest('\Omnipay\Gerencianet\Message\ServerNotifyRequest', $options);
+        return $this->createRequest('\Omnipay\Gerencianet\Message\CompleteAuthorizeRequest', $options);
     }
 
     public function fetchTransaction(array $options = array())

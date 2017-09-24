@@ -6,9 +6,14 @@
 namespace Omnipay\Gerencianet;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
+use Omnipay\Common\Helper;
 
 class Customer
 {
+    private $address;
+    
+    private $corporate;
+    
     /**
      * Internal storage of all of the customer parameters.
      *
@@ -20,9 +25,13 @@ class Customer
      * Create a new Customer object using the specified parameters 
      *
      * @param array|null $parameters An array of parameters to set on the new object
+     * @param array|null $address An associative array of Address parameters
+     * @param array|null $corporate An associative array of Corporate parameters
      */
-    public function __construct($parameters = null)
+    public function __construct($parameters = null, $address = null, $corporate = null)
     {
+        $this->address = new Address($address);
+        $this->corporate = new Corporate($corporate);
         $this->initialize($parameters);
     }
     
@@ -39,7 +48,7 @@ class Customer
         $this->parameters = new ParameterBag;
 
         Helper::initialize($this, $parameters);
-
+        
         return $this;
     }
     
@@ -64,7 +73,15 @@ class Customer
      */
     public function getParameters()
     {
-        return $this->parameters->all();
+        $parameters = $this->parameters->all();
+        if($this->address->getParameters()) {
+            $parameters['address'] = $this->address->getParameters();
+        }
+        if($this->corporate->getParameters()) {
+            $parameters['juridical_person'] = $this->corporate->getParameters();
+        }
+        
+        return $parameters;
     }
 
     /**
@@ -125,5 +142,29 @@ class Customer
     public function setBirth($value)
     {
         return $this->setParameter('birth', $value);
+    }
+    
+    public function getCorporate()
+    {
+        return $this->corporate;
+    }
+    
+    public function setCorporate($corporate)
+    {
+        $this->corporate = $corporate;
+        
+        return $this;
+    }
+    
+    public function getAddress()
+    {
+        return $this->address;
+    }
+    
+    public function setAddress($address)
+    {
+        $this->address = $address;
+        
+        return $this;
     }
 }
