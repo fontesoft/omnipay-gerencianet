@@ -33,7 +33,6 @@ class TokenRequest extends AbstractRequest
         $this->httpClient->getEventDispatcher()->addListener(
             'request.error',
             function ($event) {
-                //print_r($event['response']->getStatusCode());die();
                 if ($event['response']->isClientError()) {
                     $event->stopPropagation();
                 }

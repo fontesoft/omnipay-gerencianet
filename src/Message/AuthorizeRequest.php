@@ -38,4 +38,3 @@ class AuthorizeRequest extends AbstractRequest
         return parent::getEndpoint() . '/charge';
     }
 }
-

@@ -15,7 +15,7 @@ class Address
     protected $parameters;
     
     /**
-     * Create a new Customer object using the specified parameters 
+     * Create a new Customer object using the specified parameters
      *
      * @param array|null $parameters An array of parameters to set on the new object
      */
@@ -145,4 +145,3 @@ class Address
         return $this->setParameter('state', $value);
     }
 }
-

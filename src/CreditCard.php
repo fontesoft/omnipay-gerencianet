@@ -19,7 +19,7 @@ class CreditCard
     private $customer;
     
     /**
-     * Create a new Customer object using the specified parameters 
+     * Create a new Customer object using the specified parameters
      *
      * @param array|null $parameters An array of parameters to set on the new object
      */
@@ -117,7 +117,7 @@ class CreditCard
     
     /**
      * Get customer associated with the payment of the billet banking
-     * 
+     *
      * @return \Omnipay\Gerencianet\Customer Gerencianet Customer
      */
     public function getCustomer()
@@ -127,7 +127,7 @@ class CreditCard
 
     /**
      * Set customer of the banking billet
-     * 
+     *
      * @param \Omnipay\Gerencianet\Customer $customer Gerencianet Customer
      */
     public function setCustomer($customer)

@@ -104,7 +104,8 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $httpRequest->getCurlOptions()->set(CURLOPT_SSLVERSION, 6); // CURL_SSLVERSION_TLSv1_2 for libcurl < 7.35
         $httpResponse = $httpRequest->send();
         $body = $httpResponse->getBody(true);
-        if($httpResponse->getStatusCode() != 200) {
+        
+        if ($httpResponse->getStatusCode() != 200) {
             throw new InvalidResponseException(
                 'Error communicating with payment gateway: ' . $body,
                 $httpResponse->getStatusCode()

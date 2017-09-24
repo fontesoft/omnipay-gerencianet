@@ -7,13 +7,13 @@ use Omnipay\Common\Helper;
 
 /**
  * Banking Billet class
- * 
+ *
  * This class defines and abstracts all of the banking billet types used
  * throughout the Omnipay system.
- * 
+ *
  * The full list of banking billet attributes that may be set via the parameter to
  * *new* is as follows:
- * 
+ *
  * * expire_at
  */
 class BankingBillet
@@ -30,7 +30,7 @@ class BankingBillet
     protected $parameters;
     
     /**
-     * Create a new BankingBillet object using the specified parameters 
+     * Create a new BankingBillet object using the specified parameters
      *
      * @param array|null $parameters An array of parameters to set on the new object
      */
@@ -92,7 +92,7 @@ class BankingBillet
 
     /**
      * Get customer associated with the payment of the billet banking
-     * 
+     *
      * @return \Omnipay\Gerencianet\Customer Gerencianet Customer
      */
     public function getCustomer()
@@ -102,12 +102,12 @@ class BankingBillet
 
     /**
      * Set customer of the banking billet
-     * 
+     *
      * @param \Omnipay\Gerencianet\Customer $customer Gerencianet Customer
      */
     public function setCustomer($value)
     {
-        if(!$value instanceof Customer) {
+        if (!$value instanceof Customer) {
             $this->setParameter('customer', new Customer($value));
         }
         $this->setParameter('customer', $value);

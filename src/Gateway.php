@@ -130,7 +130,7 @@ class Gateway extends AbstractGateway
      * @return \Omnipay\Gerencianet\Message\AbstractRequest
      */
     public function createRequest($class, array $parameters = array())
-    {   
+    {
         if (!$this->hasToken() && $class != '\Omnipay\Gerencianet\Message\TokenRequest') {
             // This will set the internal token parameter which the parent
             // createRequest will find when it calls getParameters().

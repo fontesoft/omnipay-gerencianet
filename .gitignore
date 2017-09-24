@@ -1,3 +1,4 @@
 examples/
 nbproject/
 vendor/
+phpunit.xml

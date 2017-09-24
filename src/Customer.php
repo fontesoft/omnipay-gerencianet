@@ -1,6 +1,6 @@
 <?php
 /**
- * Gerencianet Pagamento' Customer 
+ * Gerencianet Pagamento' Customer
  */
 
 namespace Omnipay\Gerencianet;
@@ -19,7 +19,7 @@ class Customer
     protected $parameters;
 
     /**
-     * Create a new Customer object using the specified parameters 
+     * Create a new Customer object using the specified parameters
      *
      * @param array|null $parameters An array of parameters to set on the new object
      */
@@ -136,7 +136,7 @@ class Customer
     
     public function setJuridicalPerson($value)
     {
-        if(!$value instanceof JuridicalPerson) {
+        if (!$value instanceof JuridicalPerson) {
             $this->setParameter('juridical_person', new JuridicalPerson($value));
         }
         $this->setParameter('juridical_person', $value);
@@ -151,7 +151,7 @@ class Customer
     
     public function setAddress($value)
     {
-        if(!$value instanceof Address) {
+        if (!$value instanceof Address) {
             $this->setParameter('address', new Address($value));
         }
         $this->setParameter('address', $value);

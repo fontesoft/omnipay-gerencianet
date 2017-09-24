@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Server: cloudflare-nginx
+cache-control: no-store
+pragma: no-cache
+CF-RAY: 3a38b47cb91267f1-EZE
+Set-Cookie: __cfduid=db13e031bbdcbf7f150de11596287e26695eb5b2ef0; expires=Mon, 24-Sep-18 21:05:59 GMT; path=/; domain=.gerencianet.com.br; HttpOnly
+Date: Sun, 24 Sep 2017 21:06:00 GMT
+Content-Type: application/json
+Connection: keep-alive
+Content-Length: 233
+
+{"access_token":"A015GQlKQ6uCRzLHSGRliANi59BHw6egNVKEWRnxvTwvLr048b9c278f9dc26b86","refresh_token":"c731e0c05b112c7c3b8e992590c4e2c15941509f68279493c25e80760e9cd565","expires_in":600,"expire_at":"1506287760366","token_type":"Bearer"}
