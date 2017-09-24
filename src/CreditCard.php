@@ -23,10 +23,8 @@ class CreditCard
      *
      * @param array|null $parameters An array of parameters to set on the new object
      */
-    public function __construct($parameters = null, $address = null, $customer = null)
+    public function __construct($parameters = null)
     {
-        $this->billingAddress = new Address($address);
-        $this->customer = new Customer($customer);
         $this->initialize($parameters);
     }
     
@@ -54,9 +52,7 @@ class CreditCard
      */
     public function getParameters()
     {
-        $parameters = $this->parameters->all();
-        $parameters['billing_address'] = $this->billingAddress->getParameters();
-        $parameters['customer'] = $this->customer->getParameters();
+        return $this->parameters->all();
     }
 
     /**
@@ -105,33 +101,31 @@ class CreditCard
     
     public function getBillingAddress()
     {
-        return $this->billingAddress;
+        return $this->getParameter('billing_address');
     }
     
-    public function setBillingAddress($address)
+    public function setBillingAddress($value)
     {
-        $this->billingAddress = $address;
+        if (!$value instanceof Address) {
+            $this->setParameter('address', new Address($value));
+        }
+        $this->setParameter('address', $value);
         
         return $this;
     }
     
-    /**
-     * Get customer associated with the payment of the billet banking
-     *
-     * @return \Omnipay\Gerencianet\Customer Gerencianet Customer
-     */
     public function getCustomer()
     {
-        return $this->customer;
+        return $this->getParameter('customer');
     }
 
-    /**
-     * Set customer of the banking billet
-     *
-     * @param \Omnipay\Gerencianet\Customer $customer Gerencianet Customer
-     */
     public function setCustomer($customer)
     {
-        $this->customer = $customer;
+        if (!$value instanceof Customer) {
+            $this->setParameter('customer', new Customer($value));
+        }
+        $this->setParameter('customer', $value);
+        
+        return $this;
     }
 }

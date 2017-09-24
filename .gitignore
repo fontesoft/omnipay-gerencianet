@@ -1,4 +1,4 @@
-examples/
-nbproject/
-vendor/
+/examples/
+/nbproject/
+/vendor/
 phpunit.xml
