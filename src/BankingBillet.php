@@ -3,7 +3,6 @@
 namespace Omnipay\Gerencianet;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
-use Omnipay\Common\Helper;
 
 /**
  * Banking Billet class
@@ -16,7 +15,7 @@ use Omnipay\Common\Helper;
  *
  * * expire_at
  */
-class BankingBillet
+class BankingBillet extends Item
 {
     
     const DISCOUNT_TYPE_CURRENCY = 'currency';
@@ -36,6 +35,7 @@ class BankingBillet
      */
     public function __construct($parameters = null)
     {
+        parent::__construct();
         $this->initialize($parameters);
     }
     
@@ -51,7 +51,7 @@ class BankingBillet
     {
         $this->parameters = new ParameterBag;
 
-        Helper::initialize($this, $parameters);
+        $this->helper->initialize($this, $parameters);
 
         return $this;
     }

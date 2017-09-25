@@ -3,9 +3,8 @@
 namespace Omnipay\Gerencianet;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
-use Omnipay\Common\Helper;
 
-class JuridicalPerson
+class JuridicalPerson extends Item
 {
     /**
      * Internal storage of all of the card parameters.
@@ -21,6 +20,7 @@ class JuridicalPerson
      */
     public function __construct($parameters = null)
     {
+        parent::__construct();
         $this->initialize($parameters);
     }
     
@@ -36,7 +36,7 @@ class JuridicalPerson
     {
         $this->parameters = new ParameterBag;
 
-        Helper::initialize($this, $parameters);
+        $this->helper->initialize($this, $parameters);
 
         return $this;
     }

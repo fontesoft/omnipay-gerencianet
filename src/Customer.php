@@ -6,9 +6,8 @@
 namespace Omnipay\Gerencianet;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
-use Omnipay\Common\Helper;
 
-class Customer
+class Customer extends Item
 {
     
     /**
@@ -25,6 +24,7 @@ class Customer
      */
     public function __construct($parameters = null)
     {
+        parent::__construct();
         $this->initialize($parameters);
     }
     
@@ -40,7 +40,7 @@ class Customer
     {
         $this->parameters = new ParameterBag;
 
-        Helper::initialize($this, $parameters);
+        $this->helper->initialize($this, $parameters);
         
         return $this;
     }

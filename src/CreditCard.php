@@ -3,7 +3,6 @@
 namespace Omnipay\Gerencianet;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
-use Omnipay\Common\Helper;
 
 class CreditCard extends Item
 {
