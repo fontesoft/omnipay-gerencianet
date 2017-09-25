@@ -18,14 +18,12 @@ class CompleteAuthorizeRequest extends AbstractRequest
     {
         $this->validate('transactionReference');
         
-        $method = null;
+        $method = 'credit_card';
         $parameters = array();
         
         if ($this->payment instanceof \Omnipay\Gerencianet\BankingBillet) {
             $method = 'banking_billet';
             $parameters = $this->compileBankingBilletParameters($this->payment->getParameters());
-        } else {
-            $method = 'credit_card';
         }
         
         $data = array(
