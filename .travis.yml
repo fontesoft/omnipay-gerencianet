@@ -1,5 +1,4 @@
 language: php
-
 php:
   - 5.3
   - 5.4
@@ -22,8 +21,13 @@ matrix:
 dist: precise
 sudo: false
 
+notifications:
+  email: false
+  slack:
+    secure: iVkr1WfiGNctXKLmL+BCNNK9vQTrU8O6Rrwb5Ib85geqwicBn2G17Lar6W0tyX0UscMcktJ8eURVblwMQmKDO7minHMDHEu69M4N7uz6z796nPzgR7xi4P0jTUtcE6dVlmkFP/wxJPVhoWnM9/GrHzGC2JRLJegOHhVaokBMZmVyehOkyv7pd2JS1RDghAwT+VCucmgXbelnmbXz5hxgkimbypQ680ifAz0IwGrxDKUzff22Vj1Ah7Sz1oLhDgf0DpTY1Gzjw4JkpTbC2VCUy53qxqskkiTwnyL29x117MiKEhtHhLd0be9C171iRFASw+nIZ8LUoz3wIxa24bUUAGPw86k8wuiAwzVXznE/iB1OSFaiLPN3LZDHN4zp6IUypj82rU+OLYA9x70/fpH7lQR9PfJi2quhvf3JexcTE/CtiZdHG/r/CRBp3NRJhq2l5WakLncMbd0nj97EwAvtL8rka7Phnh2+tZoKHLJ16uv9KVIXr7N6fh3x+5WsUNgIAgbjqlPaVZDVoe+CTYVAP+r5/eyr+F9Y2ECrwWuCvvqzmH3qFvmkqSp0k1fDxjmW4yLztu1xwFWggbrrxjkNexFJWzsH93BVVqnbceAtJsRLdOJbQw/azjg89uZzkFdzfCPtuRxA9LD4W6M9juUQR51cVgdxvfOZPLi4skYj2rU=
+
 before_install:
-  - travis_retry composer self-update
+- travis_retry composer self-update
 
 install:
   - if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist; fi
@@ -33,4 +37,4 @@ install:
 script: vendor/bin/phpcs --standard=PSR2 src && vendor/bin/phpunit
 
 after_success:
-    - vendor/bin/codacycoverage clover clover.xml
+  - vendor/bin/codacycoverage clover clover.xml
