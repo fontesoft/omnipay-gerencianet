@@ -70,31 +70,17 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
                 }
             }
         );
-
-        // Guzzle HTTP Client createRequest does funny things when a GET request
-        // has attached data, so don't send the data if the method is GET.
-        if ($this->getHttpMethod() == 'GET') {
-            $httpRequest = $this->httpClient->createRequest(
-                $this->getHttpMethod(),
-                $this->getEndpoint() . '?' . http_build_query($data),
-                array(
-                    'Accept' => 'application/json',
-                    'Authorization' => 'Bearer ' . $this->getToken(),
-                    'Content-type' => 'application/json',
-                )
-            );
-        } else {
-            $httpRequest = $this->httpClient->createRequest(
-                $this->getHttpMethod(),
-                $this->getEndpoint(),
-                array(
-                    'Accept' => 'application/json',
-                    'Authorization' => 'Bearer ' . $this->getToken(),
-                    'Content-type' => 'application/json',
-                ),
-                $this->toJSON($data)
-            );
-        }
+        
+        $httpRequest = $this->httpClient->createRequest(
+            $this->getHttpMethod(),
+            $this->getEndpoint() . (($this->getHttpMethod() == 'GET') ? '?' . http_build_query($data) : ''),
+            array(
+                'Accept' => 'application/json',
+                'Authorization' => 'Bearer ' . $this->getToken(),
+                'Content-type' => 'application/json',
+            ),
+            (($this->getHttpMethod() !== 'GET') ? $this->toJSON($data) : null)
+        );
 
         $httpRequest->getCurlOptions()->set(CURLOPT_SSLVERSION, 6); // CURL_SSLVERSION_TLSv1_2 for libcurl < 7.35
         $httpResponse = $httpRequest->send();
