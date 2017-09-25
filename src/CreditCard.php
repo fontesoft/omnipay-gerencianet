@@ -5,7 +5,7 @@ namespace Omnipay\Gerencianet;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Omnipay\Common\Helper;
 
-class CreditCard
+class CreditCard extends Item
 {
     /**
      * Internal storage of all of the card parameters.
@@ -21,6 +21,7 @@ class CreditCard
      */
     public function __construct($parameters = null)
     {
+        parent::__construct();
         $this->initialize($parameters);
     }
     
@@ -35,7 +36,7 @@ class CreditCard
     public function initialize($parameters = null)
     {
         $this->parameters = new ParameterBag;
-
+        
         Helper::initialize($this, $parameters);
         
         return $this;
