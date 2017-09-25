@@ -3,11 +3,10 @@
 **Gerencianet Pagamentos' driver for the Omnipay PHP payment processing library**
 
 [![Build Status](https://travis-ci.org/fontesoft/omnipay-gerencianet.svg?branch=master)](https://travis-ci.org/fontesoft/omnipay-gerencianet)
-[![Codecov](https://codecov.io/gh/fontesoft/omnipay-gerencianet/branch/master/graph/badge.svg)](https://codecov.io/gh/fontesoft/omnipay-gerencianet)
+[![Coverage](https://codecov.io/gh/fontesoft/omnipay-gerencianet/branch/master/graph/badge.svg)](https://codecov.io/gh/fontesoft/omnipay-gerencianet)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/03dbf21f-d4fa-4e5e-9eb9-48e80d015579.svg)](https://insight.sensiolabs.com/projects/03dbf21f-d4fa-4e5e-9eb9-48e80d015579)
 [![Latest Stable Version](https://poser.pugx.org/fontesoft/omnipay-gerencianet/v/stable)](https://packagist.org/packages/fontesoft/omnipay-gerencianet)
 [![License](https://poser.pugx.org/fontesoft/omnipay-gerencianet/license)](https://packagist.org/packages/fontesoft/omnipay-gerencianet)
-
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/03dbf21f-d4fa-4e5e-9eb9-48e80d015579/small.png)](https://insight.sensiolabs.com/projects/03dbf21f-d4fa-4e5e-9eb9-48e80d015579)
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment processing library for PHP 5.3+. This package implements Gerencianet support for Omnipay.
 
