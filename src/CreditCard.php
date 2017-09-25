@@ -115,7 +115,7 @@ class CreditCard
         return $this->getParameter('customer');
     }
 
-    public function setCustomer($customer)
+    public function setCustomer($value)
     {
         if (!$value instanceof Customer) {
             $this->setParameter('customer', new Customer($value));
