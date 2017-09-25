@@ -95,8 +95,8 @@ class CompleteAuthorizeRequest extends AbstractRequest
     {
         if ($this->payment instanceof \Omnipay\Gerencianet\BankingBillet) {
             return $this->response = new BankingBilletResponse($this, $data, $statusCode);
-        } else {
-            return $this->response = new Response($this, $data, $statusCode);
         }
+        
+        return $this->response = new Response($this, $data, $statusCode);
     }
 }
