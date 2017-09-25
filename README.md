@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/fontesoft/omnipay-gerencianet.svg?branch=master)](https://travis-ci.org/fontesoft/omnipay-gerencianet)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/03dbf21f-d4fa-4e5e-9eb9-48e80d015579.svg)](https://insight.sensiolabs.com/projects/03dbf21f-d4fa-4e5e-9eb9-48e80d015579)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/08d7b9ad6d7e447c9460136e41707f88)](https://www.codacy.com/app/fontesoft/omnipay-gerencianet?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fontesoft/omnipay-gerencianet&amp;utm_campaign=Badge_Grade)
 [![Coverage](https://codecov.io/gh/fontesoft/omnipay-gerencianet/branch/master/graph/badge.svg)](https://codecov.io/gh/fontesoft/omnipay-gerencianet)
 [![Latest Stable Version](https://poser.pugx.org/fontesoft/omnipay-gerencianet/v/stable)](https://packagist.org/packages/fontesoft/omnipay-gerencianet)
 [![License](https://poser.pugx.org/fontesoft/omnipay-gerencianet/license)](https://packagist.org/packages/fontesoft/omnipay-gerencianet)
