@@ -2,6 +2,7 @@
 
 **Gerencianet Pagamentos' driver for the Omnipay PHP payment processing library**
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/08d7b9ad6d7e447c9460136e41707f88)](https://www.codacy.com/app/fontesoft/omnipay-gerencianet?utm_source=github.com&utm_medium=referral&utm_content=fontesoft/omnipay-gerencianet&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/fontesoft/omnipay-gerencianet.svg?branch=master)](https://travis-ci.org/fontesoft/omnipay-gerencianet)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/03dbf21f-d4fa-4e5e-9eb9-48e80d015579.svg)](https://insight.sensiolabs.com/projects/03dbf21f-d4fa-4e5e-9eb9-48e80d015579)
 [![Coverage](https://codecov.io/gh/fontesoft/omnipay-gerencianet/branch/master/graph/badge.svg)](https://codecov.io/gh/fontesoft/omnipay-gerencianet)
