@@ -37,7 +37,7 @@ class CreditCard extends Item
     {
         $this->parameters = new ParameterBag;
         
-        Helper::initialize($this, $parameters);
+        $this->helper->initialize($this, $parameters);
         
         return $this;
     }
