@@ -31,6 +31,7 @@
     },
     "require-dev": {
         "omnipay/tests": "~2.1.0",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "codacy/coverage": "dev-master"
     }
 }
