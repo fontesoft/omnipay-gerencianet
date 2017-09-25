@@ -48,50 +48,39 @@ class CompleteAuthorizeRequest extends AbstractRequest
     
     private function compileBankingBilletParameters($parameters)
     {
+        $parameters['configurations'] = array();
+        $parameters['discount'] = array();
+        
         if (isset($parameters['configuration_fine'])) {
-            if (array_key_exists('configurations', $parameters)) {
-                $parameters['configurations']['fine'] =
+            $parameters['configurations']['fine'] =
                     (int)number_format($parameters['configuration_fine'] * 100, 0, '', '');
-            } else {
-                $parameters['configurations'] = array(
-                    'fine' => (int)number_format($parameters['configuration_fine'] * 100, 0, '', '')
-                );
-            }
             unset($parameters['configuration_fine']);
         }
         
         if (isset($parameters['configuration_interest'])) {
-            if (array_key_exists('configurations', $parameters)) {
-                $parameters['configurations']['interest'] =
-                    (int)number_format($parameters['configuration_interest'] * 1000, 0, '', '');
-            } else {
-                $parameters['configurations'] = array(
-                    'interest' => (int)number_format($parameters['configuration_interest'] * 1000, 0, '', '')
-                );
-            }
+            $parameters['configurations']['interest'] =
+                (int)number_format($parameters['configuration_interest'] * 1000, 0, '', '');
             unset($parameters['configuration_interest']);
         }
         
         if (isset($parameters['discount_type'])) {
-            if (array_key_exists('discount', $parameters)) {
-                $parameters['discount']['type'] = $parameters['discount_type'];
-            } else {
-                $parameters['discount'] = array(
-                    'type' => $parameters['discount_type']
-                );
-            }
+            $parameters['discount']['type'] = $parameters['discount_type'];
+            
             unset($parameters['discount_type']);
         }
         
         if (isset($parameters['discount_value'])) {
-            if (array_key_exists('discount', $parameters)) {
-                $parameters['discount']['value'] = (int)number_format($parameters['discount_value'] * 100, 0, '', '');
-            } else {
-                $parameters['discount'] = array(
-                    'value' => (int)number_format($parameters['discount_value'] * 100, 0, '', '')
-                );
-            }
+            $parameters['discount']['value'] = (int)number_format($parameters['discount_value'] * 100, 0, '', '');
+            
             unset($parameters['discount_value']);
+        }
+        
+        if (!$parameters['configurations']) {
+            unset($parameters['configurations']);
+        }
+        
+        if (!$parameters['discount']) {
+            unset($parameters['discount']);
         }
         
         return $parameters;
