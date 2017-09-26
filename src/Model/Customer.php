@@ -3,9 +3,11 @@
  * Gerencianet Pagamento' Customer
  */
 
-namespace Omnipay\Gerencianet;
+namespace Omnipay\Gerencianet\Model;
 
-class Customer extends Item
+use Omnipay\Gerencianet\Common\Model;
+
+class Customer extends Model
 {
     
     /**

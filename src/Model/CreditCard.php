@@ -1,8 +1,10 @@
 <?php
 
-namespace Omnipay\Gerencianet;
+namespace Omnipay\Gerencianet\Model;
 
-class CreditCard extends Item
+use Omnipay\Gerencianet\Common\PaymentMethod;
+
+class CreditCard extends PaymentMethod
 {
     /**
      * Internal storage of all of the card parameters.
@@ -49,24 +51,9 @@ class CreditCard extends Item
     public function setBillingAddress($value)
     {
         if (!$value instanceof Address) {
-            $this->setParameter('address', new Address($value));
+            $this->setParameter('billing_address', new Address($value));
         }
-        $this->setParameter('address', $value);
-        
-        return $this;
-    }
-    
-    public function getCustomer()
-    {
-        return $this->getParameter('customer');
-    }
-
-    public function setCustomer($value)
-    {
-        if (!$value instanceof Customer) {
-            $this->setParameter('customer', new Customer($value));
-        }
-        $this->setParameter('customer', $value);
+        $this->setParameter('billing_address', $value);
         
         return $this;
     }

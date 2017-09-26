@@ -1,10 +1,11 @@
 <?php
 
-namespace Omnipay\Gerencianet;
+namespace Omnipay\Gerencianet\Model;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
+use Omnipay\Gerencianet\Common\Model;
 
-class Address extends Item
+class Address extends Model
 {
     /**
      * Internal storage of all of the card parameters.

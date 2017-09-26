@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\Gerencianet;
+namespace Omnipay\Gerencianet\Common;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Omnipay\Common\Helper;
 
-class Item
+class Model
 {
     public $helper;
     
