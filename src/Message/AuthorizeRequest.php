@@ -4,7 +4,6 @@ namespace Omnipay\Gerencianet\Message;
 
 class AuthorizeRequest extends AbstractRequest
 {
-    
     /**
      * {@inheritdoc}
      */

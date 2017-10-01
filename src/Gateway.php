@@ -44,12 +44,11 @@ class Gateway extends AbstractGateway
     /**
      * Get OAuth 2.0 access token.
      *
-     * @param bool $createIfNeeded [optional] - If there is not an active token present, should we create one?
      * @return string
      */
-    public function getToken($createIfNeeded = true)
+    public function getToken()
     {
-        if ($createIfNeeded && !$this->hasToken()) {
+        if (!$this->hasToken()) {
             $response = $this->createToken()->send();
             if ($response->isSuccessful()) {
                 $data = $response->getData();
@@ -135,7 +134,7 @@ class Gateway extends AbstractGateway
             // This will set the internal token parameter which the parent
             // createRequest will find when it calls getParameters().
             
-            $this->getToken(true);
+            $this->getToken();
         }
         
         return parent::createRequest($class, $parameters);
