@@ -9,6 +9,11 @@ class PaymentMethod extends Item
     const DISCOUNT_TYPE_CURRENCY = 'currency';
     const DISCOUNT_TYPE_PERCENTAGE = 'percentage';
     
+    public function __construct($parameters = null)
+    {
+        parent::__construct($this, $parameters);
+    }
+    
     public function getCustomer()
     {
         return $this->getParameter('customer');
