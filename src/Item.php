@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\Gerencianet\Common;
+namespace Omnipay\Gerencianet;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Omnipay\Common\Helper;
 
-class Model
+class Item
 {
     public $helper;
     
@@ -21,7 +21,6 @@ class Model
      * If any unknown parameters passed, they will be ignored.
      *
      * @param array $parameters An associative array of parameters
-     * @return BankingBillet provides a fluent interface.
      */
     public function initialize($class, $parameters)
     {
@@ -37,7 +36,6 @@ class Model
      *
      * @param string $key Parameter key
      * @param mixed $value Parameter value
-     * @return BankingBillet provides a fluent interface.
      */
     protected function setParameter($key, $value)
     {

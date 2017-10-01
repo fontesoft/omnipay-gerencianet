@@ -1,6 +1,5 @@
 /vendor/
 composer.lock
-phpunit.xml
 
 .directory
 dirlist.app

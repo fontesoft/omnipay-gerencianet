@@ -2,8 +2,6 @@
 
 namespace Omnipay\Gerencianet\Model;
 
-use Omnipay\Gerencianet\Common\PaymentMethod;
-
 /**
  * Banking Billet class
  *

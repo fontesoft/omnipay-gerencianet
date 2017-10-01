@@ -5,9 +5,9 @@
 
 namespace Omnipay\Gerencianet\Model;
 
-use Omnipay\Gerencianet\Common\Model;
+use Omnipay\Gerencianet\Item;
 
-class Customer extends Model
+class Customer extends Item
 {
     
     /**

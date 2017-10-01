@@ -1,10 +1,10 @@
 <?php
 
-namespace Omnipay\Gerencianet\Common;
+namespace Omnipay\Gerencianet\Item;
 
-use Omnipay\Gerencianet\Model\Customer;
+use Omnipay\Gerencianet\Item;
 
-class PaymentMethod extends Model
+class PaymentMethod extends Item
 {
     const DISCOUNT_TYPE_CURRENCY = 'currency';
     const DISCOUNT_TYPE_PERCENTAGE = 'percentage';
