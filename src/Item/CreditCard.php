@@ -1,7 +1,12 @@
 <?php
 
-namespace Omnipay\Gerencianet\Model;
+namespace Omnipay\Gerencianet\Item;
 
+/**
+ * Credit Card Payment Method
+ *
+ * @package Omnipay\Gerencianet\Item
+ */
 class CreditCard extends PaymentMethod
 {
     /**
@@ -20,32 +25,62 @@ class CreditCard extends PaymentMethod
     {
         parent::__construct($this, $parameters);
     }
-    
+
+    /**
+     * Get installments
+     *
+     * @return ?int
+     */
     public function getInstallments()
     {
         return $this->getParameter('installments');
     }
-    
+
+    /**
+     * Set the amount of installments
+     *
+     * @param int $value
+     */
     public function setInstallments($value)
     {
         return $this->setParameter('installments', $value);
     }
-    
+
+    /**
+     * Get Payment Token
+     *
+     * @return ?string
+     */
     public function getPaymentToken()
     {
         return $this->getParameter('payment_token');
     }
-    
+
+    /**
+     * Set Payment Token
+     *
+     * @param string $value
+     */
     public function setPaymentToken($value)
     {
         return $this->setParameter('payment_token', $value);
     }
-    
+
+    /**
+     * Get Billing Address
+     *
+     * @return ?mixed
+     */
     public function getBillingAddress()
     {
         return $this->getParameter('billing_address');
     }
-    
+
+    /**
+     * Set Billing Address
+     *
+     * @param mixed $value
+     */
     public function setBillingAddress($value)
     {
         if (!$value instanceof Address) {
