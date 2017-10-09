@@ -2,7 +2,6 @@
 
 namespace Omnipay\Gerencianet\Message;
 
-use Omnipay\Gerencianet\Message\AuthorizeRequest;
 use Omnipay\Tests\TestCase;
 
 class AuthorizeRequestTest extends TestCase
