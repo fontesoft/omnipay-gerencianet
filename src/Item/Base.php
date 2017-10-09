@@ -53,14 +53,4 @@ class Base
     {
         return $this->parameters->all();
     }
-
-    /**
-     * Get one parameter.
-     *
-     * @return mixed A single parameter value.
-     */
-    protected function getParameter($key)
-    {
-        return $this->parameters->get($key);
-    }
 }

@@ -23,7 +23,8 @@ class AddressTest extends TestCase
             ->setComplement('CS 2')
             ->setNeighborhood('Jardins')
             ->setCity('São Paulo')
-            ->setState('SP');
+            ->setState('SP')
+            ->setZipcode('01001001');
 
         $this->assertInstanceOf('\OmniPay\Gerencianet\Item\Address', $address);
         $this->assertEquals(array(
@@ -32,7 +33,8 @@ class AddressTest extends TestCase
             'complement' => 'CS 2',
             'neighborhood' => 'Jardins',
             'city' => 'São Paulo',
-            'state' => 'SP'
+            'state' => 'SP',
+            'zipcode' => '01001001'
         ), $address->getParameters());
     }
 }
