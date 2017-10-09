@@ -27,16 +27,6 @@ class CreditCard extends PaymentMethod
     }
 
     /**
-     * Get installments
-     *
-     * @return ?int
-     */
-    public function getInstallments()
-    {
-        return $this->getParameter('installments');
-    }
-
-    /**
      * Set the amount of installments
      *
      * @param int $value
@@ -47,16 +37,6 @@ class CreditCard extends PaymentMethod
     }
 
     /**
-     * Get Payment Token
-     *
-     * @return ?string
-     */
-    public function getPaymentToken()
-    {
-        return $this->getParameter('payment_token');
-    }
-
-    /**
      * Set Payment Token
      *
      * @param string $value
@@ -64,16 +44,6 @@ class CreditCard extends PaymentMethod
     public function setPaymentToken($value)
     {
         return $this->setParameter('payment_token', $value);
-    }
-
-    /**
-     * Get Billing Address
-     *
-     * @return ?mixed
-     */
-    public function getBillingAddress()
-    {
-        return $this->getParameter('billing_address');
     }
 
     /**

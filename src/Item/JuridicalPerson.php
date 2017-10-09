@@ -21,19 +21,9 @@ class JuridicalPerson extends Base
         parent::__construct($this, $parameters);
     }
     
-    public function getCorporateName()
-    {
-        return $this->getParameter('corporate_name');
-    }
-    
     public function setCorporateName($value)
     {
         return $this->setParameter('corporate_name', $value);
-    }
-    
-    public function getCnpj()
-    {
-        return $this->getParameter('cnpj');
     }
     
     public function setCnpj($value)

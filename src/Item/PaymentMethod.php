@@ -12,11 +12,6 @@ class PaymentMethod extends Base
         parent::__construct($class, $parameters);
     }
     
-    public function getCustomer()
-    {
-        return $this->getParameter('customer');
-    }
-    
     public function setCustomer($value)
     {
         if (!$value instanceof Customer) {
@@ -27,29 +22,14 @@ class PaymentMethod extends Base
         return $this;
     }
     
-    public function getDiscountType()
-    {
-        return $this->getParameter('discount_type');
-    }
-    
     public function setDiscountType($value)
     {
         return $this->setParameter('discount_type', $value);
     }
     
-    public function getDiscountValue()
-    {
-        return $this->getParameter('discount_value');
-    }
-    
     public function setDiscountValue($value)
     {
         return $this->setParameter('discount_value', $value);
-    }
-    
-    public function getMessage()
-    {
-        return $this->getParameter('message');
     }
     
     public function setMessage($value)

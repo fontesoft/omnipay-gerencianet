@@ -33,31 +33,31 @@ class BankingBillet extends PaymentMethod
         parent::__construct($this, $parameters);
     }
 
-    public function getExpireAt()
-    {
-        return $this->getParameter('expire_at');
-    }
-    
+    /**
+     * Set Expire at
+     *
+     * @param string $value Date format YYYY-MM-DD
+     */
     public function setExpireAt($value)
     {
         return $this->setParameter('expire_at', $value);
     }
 
-    public function getConfigurationFine()
-    {
-        return $this->getParameter('configuration_fine');
-    }
-    
+    /**
+     * Set Fine
+     *
+     * @param int $value
+     */
     public function setConfigurationFine($value)
     {
         return $this->setParameter('configuration_fine', $value);
     }
-    
-    public function getConfigurationInterest()
-    {
-        return $this->getParameter('configuration_interest');
-    }
-    
+
+    /**
+     * Set Interest Daily
+     *
+     * @param int $value
+     */
     public function setConfigurationInterest($value)
     {
         return $this->setParameter('configuration_interest', $value);

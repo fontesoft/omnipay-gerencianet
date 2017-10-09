@@ -12,80 +12,80 @@ class Address extends Base
     protected $parameters;
     
     /**
-     * Create a new Customer object using the specified parameters
+     * Create a new Address object using the specified parameters
      *
-     * @param array|null $parameters An array of parameters to set on the new object
+     * @param ?array $parameters An array of parameters to set on the new object
      */
     public function __construct($parameters = null)
     {
         parent::__construct($this, $parameters);
     }
-    
-    public function getStreet()
-    {
-        return $this->getParameter('street');
-    }
-    
+
+    /**
+     * Set Street
+     *
+     * @param string $value
+     */
     public function setStreet($value)
     {
         return $this->setParameter('street', $value);
     }
-    
-    public function getNumber()
-    {
-        return $this->getParameter('number');
-    }
-    
+
+    /**
+     * Set Number
+     *
+     * @param int $value
+     */
     public function setNumber($value)
     {
         return $this->setParameter('number', $value);
     }
-    
-    public function getNeighborhood()
-    {
-        return $this->getParameter('neighborhood');
-    }
-    
+
+    /**
+     * Set Neighborhood
+     *
+     * @param string $value
+     */
     public function setNeighborhood($value)
     {
         return $this->setParameter('neighborhood', $value);
     }
-    
-    public function getZipcode()
-    {
-        return $this->getParameter('zipcode');
-    }
-    
+
+    /**
+     * Set Zipcode
+     *
+     * @param string $value
+     */
     public function setZipcode($value)
     {
         return $this->setParameter('zipcode', $value);
     }
-    
-    public function getCity()
-    {
-        return $this->getParameter('city');
-    }
-    
+
+    /**
+     * Set City
+     *
+     * @param string $value
+     */
     public function setCity($value)
     {
         return $this->setParameter('city', $value);
     }
-    
-    public function getComplement()
-    {
-        return $this->getParameter('complement');
-    }
-    
+
+    /**
+     * Set Complement
+     *
+     * @param string $value
+     */
     public function setComplement($value)
     {
         return $this->setParameter('complement', $value);
     }
-    
-    public function getState()
-    {
-        return $this->getParameter('state');
-    }
-    
+
+    /**
+     * Set State/Province
+     *
+     * @param string $value
+     */
     public function setState($value)
     {
         return $this->setParameter('state', $value);
