@@ -5,7 +5,7 @@ namespace Omnipay\Gerencianet\Item;
 /**
  * Credit Card Payment Method
  *
- * @package Omnipay\Gerencianet\Item
+ * @package Omnipay\Gerencianet\Base
  */
 class CreditCard extends PaymentMethod
 {

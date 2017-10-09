@@ -1,10 +1,8 @@
 <?php
 
-namespace Omnipay\Gerencianet\Model;
+namespace Omnipay\Gerencianet\Item;
 
-use Omnipay\Gerencianet\Item;
-
-class JuridicalPerson extends Item
+class JuridicalPerson extends Base
 {
     /**
      * Internal storage of all of the card parameters.

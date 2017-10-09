@@ -24,12 +24,12 @@ class GatewayTest extends GatewayTestCase
         $this->options = array(
             'items' => array(
                 array(
-                    'name' => 'Item 1',
+                    'name' => 'Base 1',
                     'quantity' => 1,
                     'price' => 10
                 ),
                 array(
-                    'name' => 'Item 2',
+                    'name' => 'Base 2',
                     'quantity' => 2,
                     'price' => 20
                 ),
@@ -77,5 +77,38 @@ class GatewayTest extends GatewayTestCase
         $this->assertTrue($response->isSuccessful());
         $this->assertEquals('271262', $response->getTransactionReference());
         $this->assertNull($response->getMessage());
+    }
+
+    public function testCompleteAuthorize()
+    {
+        $this->setMockHttpResponse('CompleteAuthorizationBankingBilletSuccess.txt');
+
+        $paymentMethod = new Item\BankingBillet(
+            array(
+                'customer' => array(
+                    'name' => 'Gorbadoc Oldbuck',
+                    'cpf' => '94271564656',
+                    'phone_number' => '5144916523'
+                ),
+                'expire_at' => '2018-12-12'
+            )
+        );
+        $charge_id = 279945;
+
+        $response = $this->gateway->completeAuthorize(array(
+            'transaction_reference' => $charge_id,
+            'payment' => $paymentMethod
+        ))->send();
+
+        $this->assertEquals('00000.00000 00000.000000 00000.000000 0 00000000000000', $response->getBarcode());
+        $this->assertEquals('https://visualizacaosandbox.gerencianet.com.br/emissao/125673_14_ZEBRA0/A4XB-156723-122924-NEOMA7', $response->getLink());
+    }
+
+    public function testFetchTransaction()
+    {
+        $request = $this->gateway->fetchTransaction(array('transactionReference' => '271058'));
+
+        $this->assertInstanceOf('\Omnipay\Gerencianet\Message\FetchTransactionRequest', $request);
+        $this->assertEquals('271058', $request->getTransactionReference());
     }
 }

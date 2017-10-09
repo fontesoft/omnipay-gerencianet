@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Gerencianet\Model;
+namespace Omnipay\Gerencianet\Item;
 
 /**
  * Banking Billet class
@@ -32,8 +32,7 @@ class BankingBillet extends PaymentMethod
     {
         parent::__construct($this, $parameters);
     }
-    
-    
+
     public function getExpireAt()
     {
         return $this->getParameter('expire_at');

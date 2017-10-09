@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Date: Mon, 09 Oct 2017 00:38:05 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 298
+Connection: keep-alive
+Set-Cookie: __cfduid=d58e66ff3109913cfb0e5fd25649734d71507509483; expires=Tue, 09-Oct-18 00:38:03 GMT; path=/; domain=.gerencianet.com.br; HttpOnly
+X-RateLimit-Limit: 10000
+X-RateLimit-Reset: 1507594973
+X-RateLimit-Remaining: 9994
+X-Content-Type-Options: nosniff
+ETag: W/"12a-ECxKFOmPyccZDceOnw+bmw"
+Server: cloudflare-nginx
+CF-RAY: 3aae7d1a186467a9-EZE
+
+{"code":200,"data":{"barcode":"00000.00000 00000.000000 00000.000000 0 00000000000000","link":"https://visualizacaosandbox.gerencianet.com.br/emissao/125673_14_ZEBRA0/A4XB-156723-122924-NEOMA7","expire_at":"2018-12-12","charge_id":279945,"status":"waiting","total":5000,"payment":"banking_billet"}}

@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Date: Mon, 09 Oct 2017 00:11:33 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 1265
+Connection: keep-alive
+Set-Cookie: __cfduid=d6443354df49d49cb5b15370bb9851b23e510507893; expires=Tue, 09-Oct-18 00:11:33 GMT; path=/; domain=.gerencianet.com.br; HttpOnly
+X-RateLimit-Limit: 5000
+X-RateLimit-Reset: 1507592915
+X-RateLimit-Remaining: 4989
+ETag: W/"4f1-5PYgSVFf+gdJR4xjWv3MNw"
+Server: cloudflare-nginx
+CF-RAY: 3a1fba8bc9ae684b-EZE
+
+{"code":200,"data":{"charge_id":271058,"total":5000,"status":"unpaid","custom_id":null,"created_at":"2017-09-24 04:00:19","notification_url":null,"items":[{"name":"Item 1","value":1000,"amount":1},{"name":"Item 2","value":2000,"amount":2}],"history":[{"message":"Cobrança criada","created_at":"2017-09-24 04:00:19"},{"message":"Pagamento via boleto aguardando confirmação","created_at":"2017-09-24 04:00:20"},{"message":"Cliente visualizou esse boleto bancário","created_at":"2017-09-24 04:01:02"},{"message":"Pagamento não confirmado","created_at":"2017-10-02 00:38:35"}],"customer":{"name":"Gorbadoc Oldbuck","cpf":"94271564656","phone_number":"5144916523"},"payment":{"method":"banking_billet","created_at":"2017-09-24 04:00:19","message":null,"banking_billet":{"barcode":"00000.00000 00000.000000 00000.000000 0 00000000000000","link":"https://visualizacaosandbox.gerencianet.com.br/emissao/125673_5_RRAZE1/A4XB-127563-581834-ALEDR2","expire_at":"2018-12-12"}}}}

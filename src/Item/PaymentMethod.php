@@ -2,16 +2,14 @@
 
 namespace Omnipay\Gerencianet\Item;
 
-use Omnipay\Gerencianet\Item;
-
-class PaymentMethod extends Item
+class PaymentMethod extends Base
 {
     const DISCOUNT_TYPE_CURRENCY = 'currency';
     const DISCOUNT_TYPE_PERCENTAGE = 'percentage';
     
-    public function __construct($parameters = null)
+    public function __construct($class, $parameters = null)
     {
-        parent::__construct($this, $parameters);
+        parent::__construct($class, $parameters);
     }
     
     public function getCustomer()

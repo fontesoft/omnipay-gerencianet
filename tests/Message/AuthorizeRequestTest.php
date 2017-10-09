@@ -23,12 +23,12 @@ class AuthorizeRequestTest extends TestCase
     {
         $items = array(
             array(
-                'name' => 'Item 1',
+                'name' => 'Base 1',
                 'quantity' => 1,
                 'price' => 10
             ),
             array(
-                'name' => 'Item 2',
+                'name' => 'Base 2',
                 'quantity' => 2,
                 'price' => 20
             ),
@@ -37,12 +37,12 @@ class AuthorizeRequestTest extends TestCase
         $expected = array(
             'items' => array(
                 array(
-                    'name' => 'Item 1',
+                    'name' => 'Base 1',
                     'amount' => 1,
                     'value' => 1000
                 ),
                 array(
-                    'name' => 'Item 2',
+                    'name' => 'Base 2',
                     'amount' => 2,
                     'value' => 2000
                 ),

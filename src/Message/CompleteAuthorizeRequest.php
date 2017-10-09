@@ -21,7 +21,7 @@ class CompleteAuthorizeRequest extends AbstractRequest
         $method = 'credit_card';
         $parameters = array();
         
-        if ($this->payment instanceof \Omnipay\Gerencianet\BankingBillet) {
+        if ($this->payment instanceof \Omnipay\Gerencianet\Item\BankingBillet) {
             $method = 'banking_billet';
             $parameters = $this->compileBankingBilletParameters($this->payment->getParameters());
         }
@@ -93,7 +93,7 @@ class CompleteAuthorizeRequest extends AbstractRequest
     
     protected function createResponse($data, $statusCode)
     {
-        if ($this->payment instanceof \Omnipay\Gerencianet\BankingBillet) {
+        if ($this->payment instanceof \Omnipay\Gerencianet\Item\BankingBillet) {
             return $this->response = new BankingBilletResponse($this, $data, $statusCode);
         }
         
