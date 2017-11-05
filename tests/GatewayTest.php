@@ -93,6 +93,9 @@ class GatewayTest extends GatewayTestCase
                 'expire_at' => '2018-12-12'
             )
         );
+        $paymentMethod->setConfigurationFine(2);
+        $paymentMethod->setConfigurationInterest(0.033);
+
         $charge_id = 279945;
 
         $response = $this->gateway->completeAuthorize(array(
