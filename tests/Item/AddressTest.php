@@ -27,6 +27,7 @@ class AddressTest extends TestCase
             ->setZipcode('01001001');
 
         $this->assertInstanceOf('\OmniPay\Gerencianet\Item\Address', $address);
+
         $this->assertEquals(array(
             'street' => 'Rua Teste',
             'number' => 23,
